@@ -1,4 +1,5 @@
-def fractionReducing(fraction):
+def fractionMultiplication(a, b):
+    fraction = [a[0] * b[0], a[1] * b[1]]
     def gcd(a, b):
         if a > b:
             return gcd(b, a)
