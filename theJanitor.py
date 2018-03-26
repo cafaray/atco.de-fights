@@ -1,21 +1,20 @@
 def theJanitor(word):
-
-    left = [0] * 26
-    right = [0] * 26
+    l = [0] * 26
+    r = [0] * 26
     was = [0] * 26
-    for i in range(26):
-        left.append(0)
-        right.append(0)
-        was.append(False)
+    for x in range(26):
+        l+=[0]
+        r+=[0]
+        was += [False]
 
-    for i in range(len(word)):
-        c = ord(word[i]) - ord('a')
+    for x in range(len(word)):
+        c = ord(word[x]) - ord('a')
         if not was[c]:
-            left[c] = i
+            l[c] = x
             was[c] = True
-        right[c] = i
+        r[c] = x
 
-    ans = []
-    for i in range(26):
-        ans.append(right[i] - left[i] + 1 if was[i] else 0)
-    return anss
+    res = []
+    for x in range(26):
+        res+=[r[x] - l[x] + 1 if was[x] else 0]
+    return res
