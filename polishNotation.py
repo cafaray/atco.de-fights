@@ -5,7 +5,7 @@ def polishNotation(tokens):
               stringRepresentation[0] <= '9')
 
     stack = []
-    
+
     for i in range(len(tokens)):
         stack.append(tokens[i])        
         if (len(stack) > 2 and isNumber(stack[-1])
@@ -18,11 +18,12 @@ def polishNotation(tokens):
             if stack[-3] == '+':
                 result = leftOperand + rightOperand
             if stack[-3] == '*':
-                result = leftOperand * rightOperand
-            
-            stack = stack[:-3]
+                result = leftOperand * rightOperand            
+            tokens = stack[:-3]
             stack.append(str(result))
             print(stack)
+            
+            
 
     return int(stack[0])
 
