@@ -4,6 +4,6 @@ def sumOfPowers(n, divisor):
         while True:
             if x % divisor == 0:
                 res += 1
-                res /= divisor
+                x /= divisor
             else: break
     return res
