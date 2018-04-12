@@ -19,7 +19,7 @@ def polishNotation(tokens):
                 result = leftOperand + rightOperand
             if stack[-3] == '*':
                 result = leftOperand * rightOperand            
-            tokens = stack[:-3]
+            stack = stack[:-3]
             stack.append(str(result))
             print(stack)
             
