@@ -1,12 +1,8 @@
-import re
 def longestWord(text):
-    words = text.split()
-    maxim = 0
-    theWord = ''
-    for word in words:
-        g = re.search('[a-zA-Z]*', word)
-        if len(g.group(0)) > maxim:
-            maxim = len(g.group(0))
-            theWord = g.group(0)
-        print(len(g.group(0)))
-    return theWord
+    a = text.split()
+    res = ''
+    for x in a:
+        n = re.search('[A-Za-z]*', x)        
+        if len(res) < len(n.group(0)):
+            res = n.group(0) 
+    return res
