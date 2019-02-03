@@ -3,5 +3,6 @@ def exerciseElaboration(p, n):
     i = int(s)**2
     s = str(i)
     suma = 0
-    for c in s:
+    for i in s:
         suma += i
+    return suma

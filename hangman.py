@@ -1,3 +1,2 @@
-S = set
-
-hangman = lambda w,l:S(w)<=S(l[:len(S(w))+5])
+    S = set
+    return S(word)<=S(letters[:len(S(word))+5])
