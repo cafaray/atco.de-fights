@@ -1,5 +1,6 @@
 def create2DArray(lengths):
-    res=[]
-    for i in lengths:        
-        res+=[[x for x in range(i)]]
-    return res
+    r=[]
+    for x in lengths:
+        z=[i for i in range(x)]
+        r.append(z)
+    return r
