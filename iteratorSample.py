@@ -1,14 +1,23 @@
 def calkinWilfSequence(number):
     def fractions():
-        last = (1, 1)
+        last = ([1,1],[1,1])
+        r = True
         while True:
-            yield last
-            last = last[0], last[1] + last[0]
+            print('before yield', last, r)
+            yield last[1 if r else 0]
+            if r:
+                last = [[last[0][0], last[0][0]], [last[1][0] + last[1][1], last[1][0]]] 
+            else:
+                last = [last[0][0] + last[0][1], last[0][0], [last[1][0], last[1][1]]]       
+            r = not r
+            print('after yield')
 
     gen = fractions()
-    print(gen)
     res = 0
-    while next(gen) != number:
+    while True:
+        n = next(gen)
+        if n == number:
+            break
         res += 1
     return res
 
