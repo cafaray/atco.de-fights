@@ -1,24 +1,21 @@
 def calkinWilfSequence(number):
     def fractions():
-        last = ([1,1],[1,1])
-        r = True
+        tree = ([[1,1]])
+        x,y = 0,-1
         while True:
-            #print('before yield', last, r)
-            yield last[1 if r else 0]
-            if r:
-                last = [[last[0][0], last[0][0]+last[0][1]], [last[1][0], last[1][1]]] 
-            else:
-                last = [[last[0][0], last[0][1]], [last[1][0]+last[1][1], last[1][0]]]       
-            r = not r
-            #print('after yield')
+            y+=1
+            yield tree[y]
+            tree += [[tree[x][0],tree[x][0]+tree[x][1]]]
+            y+=1
+            yield tree[y]
+            tree += [[tree[x][0]+tree[x][1],tree[x][1]]]
+            x+=1
+
+        #a, b = b, 2 * (a - a % b) + b - a
 
     gen = fractions()
     res = 0
-    while True:
-        n = next(gen)
-        print(n)
-        if n == number:
-            break
+    while next(gen) != number:
         res += 1
     return res
 
