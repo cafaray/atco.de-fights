@@ -1,15 +1,16 @@
 def calkinWilfSequence(number):
     def fractions():
         tree = ([[1,1]])
-        x,y = 0,-1
+        x,y = 0,0
         while True:
-            y+=1
             yield tree[y]
             tree += [[tree[x][0],tree[x][0]+tree[x][1]]]
             y+=1
             yield tree[y]
             tree += [[tree[x][0]+tree[x][1],tree[x][1]]]
+            y+=1
             x+=1
+
 
         #a, b = b, 2 * (a - a % b) + b - a
 
