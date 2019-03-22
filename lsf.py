@@ -15,7 +15,7 @@ def continuedFraction(fraction):
     i = fraction[0]//fraction[1] 
     res+=[i]   
     while ni !=0:
-                
+        
         print("i=", i)
         r = i*fraction[1]
         ni = fraction[0]-r
