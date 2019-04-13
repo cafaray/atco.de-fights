@@ -21,7 +21,6 @@ def calkinWilfSequence(number):
     print(number, '->', res)
     return res
 
-
 print("Assertion result on [1,3] = ", calkinWilfSequence([1,3])==3)
 print("Assertion result on [14,3] = ", calkinWilfSequence([14,3])==110)
 print("Assertion result on [7,13] = ", calkinWilfSequence([7,13])==129)
