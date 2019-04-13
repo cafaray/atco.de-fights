@@ -12,9 +12,11 @@ def lsb(n):
 def continuedFraction(fraction):
     res=[]
     ni = fraction[0]
-    while ni > 0:         
-        i = fraction[0]//fraction[1]
-        res+=[i]   
+    i = fraction[0]//fraction[1] 
+    res+=[i]   
+    while ni !=0:
+        
+        print("i=", i)
         r = i*fraction[1]
         ni = fraction[0]-r
         reverseFraction = [fraction[1],ni]
