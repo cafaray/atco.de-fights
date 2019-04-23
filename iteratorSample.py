@@ -1,18 +1,18 @@
 def calkinWilfSequence(number):
     def fractions():
         tree = ([[1,1]])
-        x,y = 0,-1
+        # x,y = 0,-1
+        a = b = 1
         while True:
-            y+=1
-            yield tree[y]
-            tree += [[tree[x][0],tree[x][0]+tree[x][1]]]
-            y+=1
-            yield tree[y]
-            tree += [[tree[x][0]+tree[x][1],tree[x][1]]]
-            x+=1
-
-        #a, b = b, 2 * (a - a % b) + b - a
-
+            yield [a, b]
+            a, b = b, 2 * (a - a % b) + b - a
+            #y+=1
+            #yield tree[y]
+            #tree += [[tree[x][0],tree[x][0]+tree[x][1]]]
+            #y+=1
+            #yield tree[y]
+            #tree += [[tree[x][0]+tree[x][1],tree[x][1]]]
+            #x+=1
     gen = fractions()
     res = 0
     while next(gen) != number:
@@ -35,4 +35,4 @@ print("Assertion result on [37,53] = ", calkinWilfSequence([37,53])==1989)
 
 #print(next(myit))
 #print(next(myit))
-#print(next(myit))
+#print(next(myit))                                       
