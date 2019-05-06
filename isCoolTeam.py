@@ -2,15 +2,65 @@ class Team(object):
     def __init__(self, names):
         self.names = names
 
-    def __bool__(self):
-        firsts=[x[0].lower() for x in self.names]
-        lasts=[x[-1].lower() for x in self.names]
-        for x in firsts:
+    def createPath(self):
+        firsts, lasts = dict(), dict()
+        nodes = []
+        inout = 0
+        for i in self.names:
+            il, jl = i[0].lower(), i[-1].lower()
+            if il in firsts:
+                firsts[il] += [inout]
+            else:
+                firsts[il] = [inout]
+            if jl in lasts:
+                lasts[jl] += [inout]
+            else:
+                lasts[jl] = [inout]
+            nodes.append([il, jl])
+            inout += 1
+        
+        # start node
+        g,f = 0, 1
+        for i in nodes:
+            if i[1] in firsts:
+                if (i[0] not in lasts) or (len(firsts[i[0]]) > len(lasts[i[0]])):
+                    f = 0
+                    break
+            g += 1
+        if f > 0: 
+            g = 0  # closed path
+        
+        visited = [0]*len(nodes)
+        trace = firsts[nodes[g][0]]
+        while trace != []:
+            i = trace.pop(0)
+            visited[i] = 1
+            try : 
+                l = firsts[nodes[i][1]][:]
+                for j in l:
+                    if visited[j] == 0 :
+                        trace.append( firsts[ nodes[i][1] ].pop(0)  )
+            except: 
+                pass
+        return visited
+
+    def __bool__(self):        
+        f = [i[0].lower() for i in self.names]
+        l = [i[-1].lower() for i in self.names]
+        for i in f :
             try:
-                lasts.remove(x)
+                l.remove(i)
             except:
                 pass
-        return len(lasts)==1
+        if len(l) > 1:
+            return False    
+
+        # if base condition does not satisfied the result, so, validate through eulier path
+        visited = self.createPath()
+        # check eulier path, where all nodes are visited almost once time          
+        for i in visited:
+            if i == 0 : return False
+        return True
 
 def isCoolTeam(team):
     return bool(Team(team))
