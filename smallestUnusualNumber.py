@@ -9,6 +9,17 @@
 
 #The smallest unusual number that is greater than or equal to 42 is 50, and 50 - 42 = 8.
 
+# the real one:
+def smallest_UnusualNumber(a):
+    p = 1
+    s = 0
+    for x in a:
+        p *= int(x)
+        s += int(x)
+    if s>p:
+        return 0
+    return 10-int(a[-1])
+
 def smallestUnusualNumber(a):
     w = int(a)    
     while True:
@@ -67,14 +78,3 @@ print("Assertion case 10", smallestUnusualNumber(a)==expected)
 a = "21"
 expected = 0
 print("Assertion case 11", smallestUnusualNumber(a)==expected)
-
-# the real one:
-def smallest_UnusualNumber(a):
-    p = 1
-    s = 0
-    for x in a:
-        p *= int(x)
-        s += int(x)
-    if s>p:
-        return 0
-    return 10-int(a[-1])
