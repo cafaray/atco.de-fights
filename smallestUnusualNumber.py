@@ -10,5 +10,60 @@
 #The smallest unusual number that is greater than or equal to 42 is 50, and 50 - 42 = 8.
 
 def smallestUnusualNumber(a):
-    for i in range(int(a)):
-        print("x:", i)
+    w = int(a)    
+    while True:
+        y,z=0,1
+        #print("a =", a)
+        for x in range(len(a)):
+            y += int(a[x])
+            z *= int(a[x])
+        #print("y, z", y, z)
+        if y>z:
+            break
+        a = str(int(a) + 1)
+        #print(type(a))
+    return int(a)-w
+
+a= "42"
+expected = 8
+print("Assertion case 1", smallestUnusualNumber(a)==expected)
+
+a= "1"
+expected = 9
+print("Assertion case 2", smallestUnusualNumber(a)==expected)
+
+a = "10"
+expected = 0
+print("Assertion case 3", smallestUnusualNumber(a)==expected)
+
+a = "11"
+expected = 0
+print("Assertion case 4", smallestUnusualNumber(a)==expected)
+
+a = "17"
+expected = 0
+print("Assertion case 5", smallestUnusualNumber(a)==expected)
+
+a = "23"
+expected = 7
+print("Assertion case 6", smallestUnusualNumber(a)==expected)
+
+a = "1000000000000000000000000000000000000"
+expected = 0
+print("Assertion case 7", smallestUnusualNumber(a)==expected)
+
+a = "2017"
+expected = 0
+print("Assertion case 8", smallestUnusualNumber(a)==expected)
+
+a = "8888888888888888888888888888888"
+expected = 2
+print("Assertion case 9", smallestUnusualNumber(a)==expected)
+
+a = "22"
+expected = 8
+print("Assertion case 10", smallestUnusualNumber(a)==expected)
+
+a = "21"
+expected = 0
+print("Assertion case 11", smallestUnusualNumber(a)==expected)
