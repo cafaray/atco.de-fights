@@ -25,12 +25,13 @@ def chatBot(conversations, currentConversation):
         useFrom = -1
         for x in range(len(conversations[maxRow])-1,-1,-1):
             if conversations[maxRow][x] not in maxPointer: continue
-            for y in range(len(maxPointer)):
+            #for y in range(len(maxPointer)):
                 #print("real coincidence in: ",conversations[maxRow][x], '==', maxPointer[y])
-                if conversations[maxRow][x]==maxPointer[y]:
-                    useFrom = x
-                    break
-            if useFrom>=0: break
+            #    if conversations[maxRow][x]==maxPointer[y]:
+            useFrom = x
+            break
+            #if useFrom>=0: break
+            
         #print("useFrom: ", useFrom)
         words = conversations[maxRow][useFrom+1:]
         print("words to complete: ", words)
