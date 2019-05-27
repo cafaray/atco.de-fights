@@ -10,6 +10,8 @@ def walkRobot(data, instructions):
                 print('startpoint:', row, col)
                 matrix[row][col] = True
 
+    
+
     for m in matrix:
         print(m)
 
