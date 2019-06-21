@@ -11,23 +11,6 @@ def xmlTags(xml):
                 print("\t\t", subchild.tag, subchild.attrib)
         except:
             pass
-    
-
-xml = '<products><product><TITLE> product #1 </TITLE><PRICE> 10.00 </PRICE></product><product><TITLE> product #2 </TITLE><PRICE> 20.00 </PRICE></product></products>'
-outter = ["data()", 
- "--animal(name)", 
- "----genus()", 
- "----family(member, name, subfamily)", 
- "----similar(name, size)", 
- "----order()"]
-print("Assertion Test 1: ", xmlTags(xml) == outter)
-
-xml = '<data> <animal name="cat"><genus>Felis</genus><family name="Felidae" subfamily="Felinae"/><similar name="tiger" size="bigger"/></animal><animal name="dog"><family name="Canidae" member="canid"/><order>Carnivora</order><similar name="fox" size="similar"/></animal></data>'
-outter = ["products()", 
- "--product()", 
- "----TITLE()", 
- "----PRICE()"]
-print("Assertion Test 2: ", xmlTags(xml) == outter)
 
 xml = '<here urlid=\"blah-blah\"><component type=\"Documents\" context=\"User\"><displayName>My Video</displayName><role role=\"Data\"><detects><detect><condition>Helper.hasObject</condition></detect></detects><rules><include filter=\"Helper.IgnoreIrrelevantLinks\"><objectSet><pattern type=\"File\"></pattern></objectSet></include></rules></role></component></here>'
 outter = ["here(urlid)", 
@@ -42,6 +25,24 @@ outter = ["here(urlid)",
  "----------objectSet()", 
  "------------pattern(type)"]
 print("Assertion Test 3: ", xmlTags(xml) == outter)
+
+xml = '<data> <animal name="cat"><genus>Felis</genus><family name="Felidae" subfamily="Felinae"/><similar name="tiger" size="bigger"/></animal><animal name="dog"><family name="Canidae" member="canid"/><order>Carnivora</order><similar name="fox" size="similar"/></animal></data>'
+outter = ["data()", 
+ "--animal(name)", 
+ "----genus()", 
+ "----family(member, name, subfamily)", 
+ "----similar(name, size)", 
+ "----order()"]
+print("Assertion Test 1: ", xmlTags(xml) == outter)
+
+xml = '<products><product><TITLE> product #1 </TITLE><PRICE> 10.00 </PRICE></product><product><TITLE> product #2 </TITLE><PRICE> 20.00 </PRICE></product></products>'
+outter = ["products()", 
+ "--product()", 
+ "----TITLE()", 
+ "----PRICE()"]
+print("Assertion Test 2: ", xmlTags(xml) == outter)
+
+
 
 xml = "<a></a>"    
 ["a()"]
