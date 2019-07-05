@@ -8,3 +8,12 @@ def replaceAllDigitsRegExp(input):
         else:
             r+=c
     return r
+
+def replaceAllDigitsRegExp1(input):
+    r=''
+    for x in input:
+        if '0' <= x <= '9':
+            r+='#'
+        else:
+            r+=x
+    return r
