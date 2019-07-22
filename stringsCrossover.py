@@ -11,3 +11,27 @@ def stringsCrossover(a, result):
             j += 1
         i += 1
     return res;
+
+inputArray=["abc", 
+ "aaa", 
+ "aba", 
+ "bab"]
+result= "bbb"
+expected = 2
+print("Assertion is: ", stringsCrossover(inputArray, result)==expected)
+
+inputArray= ["aacccc", 
+ "bbcccc"]
+result= "abdddd"
+expected = 0
+#print("Assertion is: ", stringsCrossover(inputArray, result)==expected)
+
+
+inputArray= ["a", 
+ "b", 
+ "c", 
+ "d", 
+ "e"]
+result= "c"
+expected = 4
+print("Assertion is: ", stringsCrossover(inputArray, result)==expected)

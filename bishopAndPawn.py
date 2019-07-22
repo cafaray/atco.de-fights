@@ -1,4 +1,11 @@
-def bishopAndPawn(bishop, pawn):
+
+def bishopAndPawn():
+    a = ord(bishop[0]) - ord(pawn[0])
+    bishop = ord(bishop[1]) - ord(pawn[1])
+    return a *a == bishop* bishop
+
+
+def bishopAndPawn_me(bishop, pawn):
     columnaB = bishop[0]
     #print(ord(columnaB))
     columnaP = pawn[0]
@@ -39,3 +46,4 @@ def bishopAndPawn(bishop, pawn):
             if pawn == celda: return True           
         count += 1
     return False
+
