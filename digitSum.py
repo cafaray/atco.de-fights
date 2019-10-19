@@ -1,0 +1,1 @@
+return sum(int(x) for x in str(eval(dir()[0])[0]))
