@@ -15,3 +15,9 @@ def addBorder(picture):
 
     nuevo[len(nuevo)-1] = nuevo[0]
     return nuevo
+
+p=eval(dir()[0])[0]
+l=len(p[0])+2
+r=['*'*l]
+for i in range(len(p)): r+=['*'+p[i]+'*']
+return (r+['*'*l])
