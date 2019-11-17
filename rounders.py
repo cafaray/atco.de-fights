@@ -1,3 +1,16 @@
+def rounders(n):
+    c=1
+    f0=(10**c)
+    while n//f0>0:                
+        f1=(10**(c-1))
+        i=n%f0//f1
+        if i>=5:
+            n+=(f0)
+        n-=i*(f1)
+        c+=1  
+        f0=(10**c)              
+    return n
+
 def rounders_vs(value):
     svalue = str(value)[::-1]
     for s in range(0,len(svalue)-1):
@@ -15,20 +28,6 @@ def rounders_vs(value):
         svalue = str(value)[::-1]
         #print('nuevo:',svalue)
     return value
-
-
-def rounders(n):
-    c=1
-    f0=(10**c)
-    while n//f0>0:                
-        f1=(10**(c-1))
-        i=n%f0//f1
-        if i>=5:
-            n+=(f0)
-        n-=i*(f1)
-        c+=1  
-        f0=(10**c)              
-    return n
 
 n=15
 e=20
