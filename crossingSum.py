@@ -1,6 +1,5 @@
 def crossingSum(matrix, a, b):
     res=0
-    max=0    
     for i in range(len(matrix)):   
         res+=matrix[i][b]    
         i+=1
