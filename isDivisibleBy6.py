@@ -21,3 +21,12 @@ def isDivisibleBy6(inputString):
                 answer.append(''.join(mask))
 
     return answer
+
+
+def isDivisibleBy6(inputString):
+    r=[]
+    for i in range(0,10):
+        n=int(inputString.replace("*", str(i)))
+        if n%6==0:
+            r+=[str(n)]
+    return r
