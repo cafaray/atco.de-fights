@@ -1,0 +1,13 @@
+import re
+def parseHostResponseToXML(msg):
+    p = re.compile("(&lt;)")
+    msg=p.sub('<',msg)
+    p = re.compile("(&gt;)")
+    msg=p.sub('>',msg)
+    return msg
+
+#msg="<DATXML>&lt;XMSG&gt;&lt;PROCEDS&gt;IE09&lt;/PROCEDS&gt;&lt;IDCLIEN&gt;61115905Y&lt;/IDCLIEN&gt;&lt;NUMPERS&gt;16561199&lt;/NUMPERS&gt;&lt;VARPERS&gt; &lt;/VARPERS&gt;&lt;CAMPMMC&gt;&lt;BDCDCAMP&gt;CONSENT1&lt;/BDCDCAMP&gt;&lt;BDREFM EN&gt; &lt;/BDREFMEN&gt;&lt;CLAVEAPLI&gt; &lt;/CLAVEAPLI&gt;&lt;BDREFLOT&gt; &lt;/BDREFLOT&gt;&lt;/CAMPMMC&gt;&lt;DATA-MU-OPER&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;1&lt;/INDEX-OPER&gt;&lt;/DATA-OPER -REC&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;2&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;3&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt ;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;4&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;5&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;DA TA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;6&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;/DATA-MU-OPER&gt;&lt;INFOCOM&gt;S&lt;/INFOCOM&gt;&lt;/XMSG&gt;</DATXML>"
+msg="<DATXML>&lt;XMSG&gt;&lt;PROCEDS&gt;IE09&lt;/PROCEDS&gt;&lt;IDCLIEN&gt;33863073&lt;/IDCLIEN&gt;&lt;NUMPERS&gt;653856&lt;/NUMPERS&gt;&lt;VARPERS&gt;61001000000000001010120101202001030205760100311111000000000000000000000000000000000000 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&lt;/VARPERS&gt;&lt;CAMPMMC&gt;&lt;BDCDCAMP&gt; &lt;/BDCDCAMP&gt;&lt;BDREFMEN&gt; &lt;/BDREFMEN&gt;&lt;CLAVEAPLI&gt; &lt;/C LAVEAPLI&gt;&lt;BDREFLOT&gt; &lt;/BDREFLOT&gt;&lt;/CAMPMMC&gt;&lt;DATA-MU-OPER&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;1&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &l t;/COD-OPER&gt;&lt;INDEX-OPER&gt;2&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;3&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD- OPER&gt;&lt;INDEX-OPER&gt;4&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt;&lt;INDEX-OPER&gt;5&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;DATA-OPER-REC&gt;&lt;COD-OPER&gt; &lt;/COD-OPER&gt ;&lt;INDEX-OPER&gt;6&lt;/INDEX-OPER&gt;&lt;/DATA-OPER-REC&gt;&lt;/DATA-MU-OPER&gt;&lt;INFOCOM&gt;X&lt;/INFOCOM&gt;&lt;/XMSG&gt;</DATXML>"
+print(parseHostResponseToXML(msg))
+
+
