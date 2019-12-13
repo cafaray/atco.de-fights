@@ -8,3 +8,17 @@ def squareDigitsSequence(a0):
         else:
             break 
     return len(nn)+1
+
+def squareDigitsSequence(a0):    
+    nn = [a0]
+    while True:
+        a=nn[-1] 
+        s=0
+        while a>0:
+            s+=(a%10)**2
+            a/=10
+        if s not in nn:
+            nn+=[s] 
+        else:
+            break 
+    return len(nn)+1
