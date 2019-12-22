@@ -1,12 +1,11 @@
 def isIdentityMatrix(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
-            if i==j: 
-                if matrix[i][j]==1:
-                    continue
-                else:
-                    return False
-            if matrix[i][j]!=0:
+            if i==j and matrix[i][j]==1:
+                continue
+            elif i!=j and matrix[i][j]==0:
+                continue
+            else:
                 return False
     return True
 
