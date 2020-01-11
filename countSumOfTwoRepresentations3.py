@@ -1,4 +1,5 @@
 def countSumOfTwoRepresentations3(n, l, r):
+    # first solution with brute force, time exceeded :(
     c=0
     while r>=l:
         if l<=(n-r)<=r:
@@ -7,6 +8,14 @@ def countSumOfTwoRepresentations3(n, l, r):
             break
         r-=1
     return c
+
+    # a better approach using o(1) solution, nice :)
+    if (n//2) >= l and (n//2)<=r:
+        return min([(n//2-l),(r-(n//2))]) + (n%2==0) + (n%2)
+    else:
+        return 0
+    return sum(1 for a in range(l, r+1) if l <= a <= n - a <= r)
+
 
 n=24
 l=8
