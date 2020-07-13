@@ -1,0 +1,47 @@
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based coping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+
+# This is your document metadata
+info:
+  version: "1.0"
+  title: Hello World API
+  description: |
+    This is a Hello World API for testing purpose
+
+# schemes:
+#   - http
+  
+# Describe your paths here
+paths:
+  # This is a path endpoint. Change it.
+  /hello:
+    # This is a HTTP operation
+    get:
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        echo a Hello World message with an optional user name at the end
+      # This is array of GET operation parameters:
+      parameters:
+        # An example parameter that is in query and is required
+        - name: user
+          in: query
+          description: name to say hello
+          required: true
+          type: string
+      # Expected responses for this operation:
+      responses:
+        # Response code
+        200:
+          description: Returns the greeting.
+          schema:
+            type: string
+        400:
+          description: Invalid characters in "user" were provided.
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /cafaray/hello_world/1.0
+schemes:
+ - https
+ - http
