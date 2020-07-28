@@ -40,7 +40,7 @@ paths:
         400:
           description: Invalid characters in "user" were provided.
 # Added by API Auto Mocking Plugin
-host: virtserver.swaggerhub.com
+host: https://us-central1-astral-outpost-262008.cloudfunctions.net/helloWorld
 basePath: /cafaray/hello_world/1.0
 schemes:
  - https
